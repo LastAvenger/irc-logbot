@@ -16,7 +16,7 @@ f = None
 def log(msg):
     global f
     print('[logbot]', 'log:', msg)
-    today = strftime('%Y-%m-%d-%M.log')
+    today = strftime('%Y-%m-%d.log')
     if f.name != today:
         f.close()
         try:
@@ -39,7 +39,7 @@ def main():
     print('[logbot]', 'start logging:', strftime('%Y-%m-%d %H:%M:%S'))
 
     cd(repo)
-    f = open(strftime('%Y-%m-%d-%M.log'), 'w+')
+    f = open(strftime('%Y-%m-%d.log'), 'w+')
 
     bot = ircbot(host, port, nick)
     bot.join_chan(chan)
