@@ -39,7 +39,7 @@ def main():
     print('[logbot]', 'start logging:', strftime('%Y-%m-%d %H:%M:%S'))
 
     cd(repo)
-    f = open(strftime('%Y-%m-%d.log'), 'w+')
+    f = open(strftime('%Y-%m-%d.log'), 'a')
 
     bot = ircbot(host, port, nick)
     bot.join_chan(chan)
