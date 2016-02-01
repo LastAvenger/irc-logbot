@@ -51,10 +51,12 @@ def main():
                 continue
             if rmsg[1] in ['PART', 'JOIN']:
                 man, act, ch = rmsg
-                line = '[{0}] -- {1} {2} {3}\n'.format(strftime('%H:%M:%S'), man, act, ch)
+                line = '[{0}] -- {1} {2} {3}\n'.format(strftime('%H:%M:%S'), man, act, chan)
             else:
                 man, ch, msg = rmsg
-                line = '[{0}] {1}@{2}: {3}\n'.format(strftime('%H:%M:%S'), man, ch, msg)
+                if ch != chan:
+                    continue
+                line = '[{0}] {1}: {3}\n'.format(strftime('%H:%M:%S'), man, ch, msg)
             log(line)
             
     except KeyboardInterrupt:
