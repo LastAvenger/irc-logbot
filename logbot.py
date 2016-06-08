@@ -52,6 +52,9 @@ def main():
             if rmsg[1] in ['PART', 'JOIN']:
                 man, act, ch = rmsg
                 line = '[{0}] -- {1} {2} {3}\n'.format(strftime('%H:%M:%S'), man, act, chan)
+            elif rmsg[1] ==  'QUIT':
+                man, act, ch = rmsg
+                line = '[{0}] -- {1} {2}\n'.format(strftime('%H:%M:%S'), man, act)
             else:
                 man, ch, msg = rmsg
                 if ch != chan:

@@ -40,7 +40,7 @@ class ircbot:
     def recv_msg(self):
         try:
             msg_pattern = re.compile(r':(.*?)!~.*?@.*? PRIVMSG (.*?) :(?u)(.*)')
-            act_pattern = re.compile(r':(.*?)!~.*?@.*? (JOIN|PART) (.*)')
+            act_pattern = re.compile(r':(.*?)!~.*?@.*? (JOIN|PART|QUIT) (.*)')
 
             data = self.sock.recv(2048)
             data = data.decode('utf-8').strip('\n\r')
