@@ -5,8 +5,5 @@ REQUIRE
   - python3
   - python-sh
 
-WORK FOR:
-  - freenode@#gzlug
-
 LICENSE
   GPL3
